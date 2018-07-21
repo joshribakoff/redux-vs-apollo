@@ -17,6 +17,11 @@ This repo is to capture my WIP thoughts on the question of "redux vs apollo clie
 - apollo allows accidently working at the wrong level of abstraction [too high]
 
 TODO - implement distributed counter using both paradims, showing pitfalls and how to overcome
+
 TODO - talk about testability
+
 TODO - talk about performance
+
 TODO - talk about single source of truth, computed state/memoized selectors. tradeoffs with server computing state. if i fetch an aggregate value summarizing my data for Page A and the raw data being aggregated is shown on Page B, those values can get out of sync in the store. if I fetch my entire data store into redux just to aggregate data client side that has direct tradeoffs with some of the issues graphql intends to solve. 
+
+TODO - talk about the question should redux actions model user's intent vs leaking implementation details (actions named addToTodosById)
