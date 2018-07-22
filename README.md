@@ -2,7 +2,7 @@
 
 This repo is to capture my WIP thoughts on the question of "redux vs apollo client". Most of this wont make sense to anyone until I clean up my notes.
 
-- redux reduces from state from actions (operations), apollo updates state
+- redux reduces state from actions (operations), apollo updates state with mutations (operations)
   - research on CRDTs show one can emulate the other
     - 1x only delivery, who will acknowledge the acknowledgement
     - model actions in graphql, use uuid to de-duplicate
@@ -15,6 +15,8 @@ This repo is to capture my WIP thoughts on the question of "redux vs apollo clie
 - redux doesnt preclude from using graphql
 - redux allows accidently working at the wrong level of abstraction [too low]
 - apollo allows accidently working at the wrong level of abstraction [too high]
+- redux is reactive, because it encourages a single source of truth, all computed state is calculated client side / selectors react
+- apollo is proactive, for "computated state" that is managed server side, you have to tell it what queries to refetch and/or explicitly update the state imperatively
 
 TODO - implement distributed counter using both paradims, showing pitfalls and how to overcome
 
