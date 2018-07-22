@@ -18,7 +18,7 @@ This repo is to capture my WIP thoughts on the question of "redux vs apollo clie
 - redux is reactive, because it encourages a single source of truth, all computed state is calculated client side / selectors react
 - apollo is proactive, for "computated state" that is managed server side, you have to tell it what queries to refetch and/or explicitly update the state imperatively
 - Both can be considered "global state" ... you pass apollo client / redux store down the component tree via the context API.  Contrast this with the original flux pattern with multiple stores where the stores could hold duplicate data that got out of sync
-- apollo / nor redux fully solve the issue... see above point about it being sometimes unreasonable to dowload and calculate derived data client side. at some point your app scales and you need to move things to the server and introduce a new field (duplicating data)
+- apollo / nor redux fully solve the issue... see above point about it being sometimes unreasonable to dowload and calculate derived data client side. at some point your app scales and you need to move things to the server and introduce a new field (duplicating data), redux wants a single source of truth which could encourage over-fetching from the server. GraphQL/apollo would seem to encourage fetching a list and it's count as separate fields, letting the server aggregate. Direct tradeoff. Note that apollo has 3rd party libs for computed state client-side, also has `refetchQueries` which is proactive instead of reactive. Every mutation has to be aware of every query it affects, whereas the selector pattern is reactive but could involve over fetching
 
 TODO - implement distributed counter using both paradims, showing pitfalls and how to overcome
 
